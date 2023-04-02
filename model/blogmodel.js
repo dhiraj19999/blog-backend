@@ -6,14 +6,14 @@ const reqNumber = { type: Number, required: true };
 const blogSchema = mongoose.Schema({
     uniq_id: String,
   Title: reqString,
- /* Content: reqString,
+  Content: reqString,
   topic: reqString,
   dat:Number || String,
   catgeory:reqString,
   shortinfo: reqString,
  authorName:String,
 
-  image:[],*/
+  image:[],
   authorID: String,
   comments:[]
 });
