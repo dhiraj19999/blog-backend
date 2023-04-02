@@ -3,13 +3,13 @@ const express = require("express");
 const { connect } = require("./config/db");
 const app = express();
 const cors = require("cors");
-const { adminRouter}=require("../Backend/routes/Admin.route")
-const {AuthorRouter}=require("../Backend/routes/Author.route")
+const { adminRouter}=require("./routes/Admin.route")
+const {AuthorRouter}=require("./routes/Author.route")
 
-const{ productRouter}=require("../Backend/routes/blog.route")
+const{ productRouter}=require("./routes/blog.route")
 
 const { authenticate } = require("./middelware/auth.middelware");
-const { readerRouter}=require('../Backend/routes/reader')
+const { readerRouter}=require('./routes/reader')
 require("dotenv").config();
 app.use(
     express.static("public", {
