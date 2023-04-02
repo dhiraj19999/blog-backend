@@ -36,7 +36,7 @@ app.use(
 
   app.use(express.json());
 app.use('/allblogs',BlogsRouter)
-app.use("/blogs",authenticate, productRouter);
+app.use("/blogs", productRouter);
 
 app.use("/author",  AuthorRouter);
 app.use("/admin",  adminRouter);
