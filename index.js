@@ -9,7 +9,7 @@ const {AuthorRouter}=require("./routes/Author.route")
 const{ productRouter}=require("./routes/blog.route")
 
 const { authenticate } = require("./middelware/auth.middelware");
-const { readerRouter}=require('./routes/reader')
+const { BlogsRouter}=require('./routes/blogs.routes')
 require("dotenv").config();
 app.use(
     express.static("public", {
@@ -35,7 +35,7 @@ app.use(
 
 
   app.use(express.json());
-app.use('/reader',readerRouter)
+app.use('/allblogs',BlogsRouter)
 app.use("/blogs",authenticate, productRouter);
 
 app.use("/author",  AuthorRouter);

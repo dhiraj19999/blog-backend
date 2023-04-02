@@ -1,6 +1,6 @@
 const express = require("express");
 const {BlogModel}=require('../model/blogmodel');
-const readerRouter = express.Router();
+const BlogsRouter = express.Router();
 
 
 
@@ -10,7 +10,7 @@ const readerRouter = express.Router();
 
 
 
-readerRouter.get("/get", async (req, res) => {
+BlogsRouter.get("/get", async (req, res) => {
     const limit = req.query.limit || 10;
     const page = Math.max(0, req.query.page || 0);
     const sort = req.query.sortBy;
@@ -53,7 +53,7 @@ readerRouter.get("/get", async (req, res) => {
 
 
  
-  readerRouter.get("/:id", async (req, res) => {
+  BlogsRouter.get("/:id", async (req, res) => {
     const { id } = req.params;
     try {
       const product = await BlogModel.find({uniq_id:id });
@@ -67,5 +67,5 @@ readerRouter.get("/get", async (req, res) => {
 
 
   module.exports = {
-    readerRouter,
+    BlogsRouter,
   };
