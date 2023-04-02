@@ -9,7 +9,7 @@ const {AuthorRouter}=require("./routes/Author.route")
 const{ productRouter}=require("./routes/blog.route")
 
 const { authenticate } = require("./middelware/auth.middelware");
-const { BlogsRouter}=require('./routes/blogs.routes')
+const { BlogsRouter}=require('./routes/blogs.route')
 require("dotenv").config();
 app.use(
     express.static("public", {
